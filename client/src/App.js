@@ -13,7 +13,8 @@ function App() {
       className="App"
       style={{
         height:
-          window.location.href === "http://localhost:3000/chat"
+          window.location.href ===
+          "https://social-media-chatapp-mern-success.netlify.app/chat"
             ? "calc(100vh - 2rem)"
             : "auto",
       }}
@@ -25,14 +26,8 @@ function App() {
           path="/"
           element={user ? <Navigate to="home" /> : <Navigate to="auth" />}
         />
-        <Route
-          path="/home"
-          element={user ? <Home /> : <Navigate to="../auth" />}
-        />
-        <Route
-          path="/auth"
-          element={user ? <Navigate to="../home" /> : <Auth />}
-        />
+        <Route path="/home" element={user ? <Home /> : <Navigate to="../auth" />} />
+        <Route path="/auth" element={user ? <Navigate to="../home" /> : <Auth />} />
         <Route
           path="/profile/:id"
           element={user ? <Profile /> : <Navigate to="../auth" />}
@@ -46,10 +41,7 @@ function App() {
           }
         />
 
-        <Route
-          path="/chat"
-          element={user ? <Chat /> : <Navigate to="../auth" />}
-        />
+        <Route path="/chat" element={user ? <Chat /> : <Navigate to="../auth" />} />
       </Routes>
     </div>
   );
