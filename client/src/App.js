@@ -14,7 +14,7 @@ function App() {
       style={{
         height:
           window.location.href ===
-          "https://social-media-chatapp-mern-success.netlify.app/chat"
+          "https://social-media-chatapp-mern-success.netlify.app/"
             ? "calc(100vh - 2rem)"
             : "auto",
       }}
