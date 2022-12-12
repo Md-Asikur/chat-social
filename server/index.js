@@ -23,7 +23,9 @@ app.use(cors());
 // to serve images inside public folder
 app.use(express.static('public')); 
 app.use('/images', express.static('images'));
-
+app.get("/", (req, res) => {
+ res.json({ message: "Hello Worlld! I am Live Now" });
+})
 
 dotenv.config();
 const PORT = process.env.PORT;
