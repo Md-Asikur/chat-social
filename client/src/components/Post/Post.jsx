@@ -6,6 +6,7 @@ import Heart from "../../img/like.png";
 import NotLike from "../../img/notlike.png";
 import { likePost } from "../../api/PostsRequests";
 import { useSelector } from "react-redux";
+import uploadFile from "../../firebase/uploadFile";
 
 const Post = ({ data }) => {
   const { user } = useSelector((state) => state.authReducer.authData);
@@ -21,7 +22,7 @@ const Post = ({ data }) => {
   return (
     <div className="Post">
       <img
-        src={data.image ? process.env.REACT_APP_PUBLIC_FOLDER + data.image : ""}
+        src={data.image ? uploadFile + data.image : ""}
         alt=""
       />
 

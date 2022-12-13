@@ -4,10 +4,11 @@ import Cover from "../../img/cover.jpg";
 import Profile from "../../img/profileImg.jpg";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import uploadFile from "../../firebase/uploadFile";
 const ProfileCard = ({location}) => {
   const { user } = useSelector((state) => state.authReducer.authData);
   const posts = useSelector((state)=>state.postReducer.posts)
-  const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
+  const serverPublic = uploadFile;
 
   return (
     <div className="ProfileCard">
